@@ -4,14 +4,14 @@ import { parseCookie } from './auth';
 
 const {
   ENVIRONMENT,
-  CLIENT_ID,
-  CLIENT_SECRET,
+  CLIENT_ID = "475609166223-351dlt5ttaiktpv8eg777hm78rnig3de.apps.googleusercontent.com",
+  CLIENT_SECRET = "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",
 } = process.env;
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLIENT_SECRET,
-  ENVIRONMENT === 'develop' ? 'http://localhost:3000/authenticate/' : 'https://countdown-timer-app.vercel.app/authenticate/',
+  ENVIRONMENT === 'develop' ? 'http://localhost:3000/authenticate/' : 'https://gg-countdown-timer-app.vercel.app/authenticate/',
 );
 
 export const getToken = async (code) => {
